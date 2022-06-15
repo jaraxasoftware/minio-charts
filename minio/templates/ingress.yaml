@@ -35,9 +35,12 @@ spec:
     - http:
         paths:
           - path: {{ $ingressPath }}
+            pathType: {{ $.Values.ingress.pathType | default "ImplementationSpecific" }}
             backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $servicePort }}
+              service:
+                name: {{ $fullName }}
+                port: 
+                  number: {{ $servicePort }}
       {{- if . }}
       host: {{ . | quote }}
       {{- end }}
