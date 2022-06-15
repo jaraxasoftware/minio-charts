@@ -220,9 +220,7 @@ podLabels: {}
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ##
-resources:
-  requests:
-    memory: 4Gi
+resources: {}
 
 ## Create a bucket after minio install
 ##
